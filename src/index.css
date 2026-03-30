@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "MS Sans Serif", "Tahoma", "Arial", sans-serif;
+}
+
+@layer base {
+  :root {
+    --win-bg: #008080; /* Classic Teal Desktop */
+    --win-silver: #c0c0c0;
+    --win-white: #ffffff;
+    --win-gray: #808080;
+    --win-dark-gray: #404040;
+    --win-black: #000000;
+    --win-blue: #000080;
+    --win-blue-light: #1084d0;
+  }
+
+  body {
+    background-color: var(--win-bg);
+    color: var(--win-black);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    image-rendering: pixelated;
+    overflow: hidden;
+  }
+
+  /* 3D Borders - Raised */
+  .win-raised {
+    background-color: var(--win-silver);
+    box-shadow: 
+      inset 1px 1px 0px var(--win-white),
+      inset -1px -1px 0px var(--win-gray),
+      1px 1px 0px var(--win-black);
+    border: 1px solid var(--win-white);
+    border-right-color: var(--win-gray);
+    border-bottom-color: var(--win-gray);
+  }
+
+  /* 3D Borders - Sunken (Inputs, Textareas) */
+  .win-sunken {
+    background-color: var(--win-white);
+    box-shadow: 
+      inset 1px 1px 0px var(--win-gray),
+      inset -1px -1px 0px var(--win-white),
+      1px 1px 0px var(--win-white);
+    border: 1px solid var(--win-dark-gray);
+    border-right-color: var(--win-silver);
+    border-bottom-color: var(--win-silver);
+  }
+
+  /* Windows Window Style */
+  .win-window {
+    background-color: var(--win-silver);
+    padding: 3px;
+    box-shadow: 
+      inset 1px 1px 0px var(--win-white),
+      inset -1px -1px 0px var(--win-gray),
+      1px 1px 0px var(--win-black);
+    border: 1px solid var(--win-white);
+    border-right-color: var(--win-gray);
+    border-bottom-color: var(--win-gray);
+  }
+
+  .win-title-bar {
+    background: var(--win-blue);
+    color: var(--win-white);
+    padding: 3px 5px 3px 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    height: 18px;
+    user-select: none;
+  }
+
+  .win-title-bar.inactive {
+    background: var(--win-gray);
+  }
+
+  .win-title-text {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Classic Buttons */
+  .win-button {
+    background-color: var(--win-silver);
+    border: 1px solid var(--win-white);
+    border-right-color: var(--win-gray);
+    border-bottom-color: var(--win-gray);
+    box-shadow: 
+      inset 1px 1px 0px var(--win-white),
+      inset -1px -1px 0px var(--win-gray),
+      1px 1px 0px var(--win-black);
+    padding: 4px 12px;
+    font-size: 11px;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    outline: none;
+  }
+
+  .win-button:active {
+    box-shadow: 
+      inset 1px 1px 0px var(--win-gray),
+      inset -1px -1px 0px var(--win-white),
+      1px 1px 0px var(--win-white);
+    border: 1px solid var(--win-dark-gray);
+    border-right-color: var(--win-silver);
+    border-bottom-color: var(--win-silver);
+    padding: 5px 11px 3px 13px;
+  }
+
+  /* Window Control Buttons (X, _, []) */
+  .win-btn-control {
+    width: 16px;
+    height: 14px;
+    min-width: 16px;
+    background-color: var(--win-silver);
+    border: 1px solid var(--win-white);
+    border-right-color: var(--win-gray);
+    border-bottom-color: var(--win-gray);
+    box-shadow: inset 1px 1px 0px var(--win-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    color: var(--win-black);
+    padding: 0;
+    margin-left: 2px;
+  }
+
+  .win-btn-control:active {
+    box-shadow: inset 1px 1px 0px var(--win-gray);
+    border: 1px solid var(--win-dark-gray);
+    border-right-color: var(--win-silver);
+    border-bottom-color: var(--win-silver);
+    padding: 1px 0 0 1px;
+  }
+
+  /* Scrollbars */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  ::-webkit-scrollbar-track {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAD0lEQVQYV2P8z8DwH0SDAAn0An7m5f7EAAAAAElFTkSuQmCC");
+    background-repeat: repeat;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--win-silver);
+    border: 1px solid var(--win-white);
+    border-right-color: var(--win-gray);
+    border-bottom-color: var(--win-gray);
+    box-shadow: inset 1px 1px 0px var(--win-white);
+  }
+  ::-webkit-scrollbar-button {
+    background-color: var(--win-silver);
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--win-white);
+    border-right-color: var(--win-gray);
+    border-bottom-color: var(--win-gray);
+    box-shadow: inset 1px 1px 0px var(--win-white);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
